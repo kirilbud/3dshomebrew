@@ -3,17 +3,19 @@
         {
             "name": "devkitPro",
             "includePath": [
-                "${workspaceFolder}/**",
-                "/opt/devkitpro/libnds/include/**",
-                "/opt/devkitpro/libctru/include/**",
-                "/opt/devkitpro/devkitARM/include/**",
-                "/opt/devkitpro/devkitARM/arm-none-eabi/include/**"
+                "${workspaceRoot}/**",
+                "${workspaceRoot}/build",
+                "${env:DEVKITPRO}/libctru/include",
+                "${env:DEVKITARM}/arm-none-eabi/include",
+                "${env:DEVKITARM}/lib/gcc/arm-none-eabi/**"
             ],
             "defines": [
-                "ARM9"
+                "__3DS__"
             ],
-            "compilerPath": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc",
-            "intelliSenseMode": "windows-gcc-x64"
+            "compilerPath": "${env:DEVKITARM}/bin/arm-none-eabi-gcc",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64"
         }
     ],
     "version": 4
