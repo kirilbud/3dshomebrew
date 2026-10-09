@@ -42,7 +42,7 @@ int main(int argc, char **argv){
         gfxSwapBuffers();
 
         //wait for VBlank 
-        //todo learn what a VBlank is
+        //TODO learn what a VBlank is
         gspWaitForVBlank();
     }
     

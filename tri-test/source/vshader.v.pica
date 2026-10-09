@@ -1,0 +1,40 @@
+; this is a comment for .pica
+
+; uniforms
+.fvec projection[4]
+
+;Constants
+.constf myconst(0.0, 1.0, -1.0, 0.1)
+.constf myconst2(0.3, 0.0, 0.0, 0.0)
+.alias zeros myconst.xxxx ; vector full of ones for math
+.alias ones myconst.yyyy ; vector full of zeros for math
+
+;outputs
+.out outpos position
+.out outclr color
+
+; inputs also called alieses
+.alias inpos v0
+.alias inclr v1
+
+;main function
+.proc main
+    ; make w component of the input position to be 1.0
+    ; make sure to do this if you are passing in a vector 3 i assume
+    mov r0.xyz, inpos
+    mov r0.w, ones
+
+    ; outpos = projection matrix * inpos
+    ; i guess this is how you do matrix multiplication :(
+    dp4 outpos.x, projection[0], r0
+    dp4 outpos.y, projection[1], r0
+    dp4 outpos.z, projection[2], r0
+    dp4 outpos.w, projection[3], r0
+    ;TODO fiduge out what dp4 is
+
+    ; outclr = inclr
+    mov outclr, inclr
+
+    ;end the shader i think????
+    end 
+.end

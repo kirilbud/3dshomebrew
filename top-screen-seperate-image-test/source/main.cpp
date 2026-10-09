@@ -108,7 +108,7 @@ int main(){
         }
 
         C3D_FrameEnd(0); // not sure what this is
-        //todo figure this out^
+        //TODO figure this out^
     }
     // free sprite sheets
     C2D_SpriteSheetFree(orange_sheet);
